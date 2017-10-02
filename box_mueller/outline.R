@@ -1,5 +1,4 @@
 library(ggplot2)
-library(gridExtra)
 
 num <- 1000
 input <- matrix(runif(n = num, min = 0, max = 1), ncol = 2)
@@ -32,5 +31,3 @@ hy <- ggplot() +
   geom_histogram(mapping = aes(x = y, y = ..density..), binwidth = 0.5) +
   geom_density(mapping = aes(x = y), alpha = 0.2, color = "red") +
   ggtitle("Y Histogram With Density")
-
-grid.arrange(qx, hx, qy, hy, ncol = 2)
