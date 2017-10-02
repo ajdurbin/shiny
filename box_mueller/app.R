@@ -22,7 +22,12 @@ ui <- fluidPage(
     mainPanel = (
       
       tabsetPanel(
-        tabPanel("Background"),
+        tabPanel("Background", 
+                 helpText("The Box-Mueller algorithm is a direct method for
+                          generating independent standard normal random variables
+                          given independent uniform(0,1) random variables. 
+                          The algorithm is as follows:"),
+                 verbatimTextOutput(outputId = "algo")),
         
         tabPanel("Summary", 
                  helpText("Below is a quick summary of the generated data. 
@@ -104,6 +109,11 @@ server <- function(input, output){
   output$var <- renderPrint(var(the_data()))
   output$shapiro <- renderPrint(shapiro.test(the_data()))
   output$grid <- renderPlot(plot_grid())
+  output$algo <- renderText(
+    "Generate U, V ~ uniform(0, 1) independent random variables 
+    \nSet R = sqrt(-2 * log(U)), S = 2 * pi * V 
+    \nSet X = R * cos(S), Y = R * sin(S) 
+    \nThen X, Y are independent standard normal random variables")
 
   
 }
