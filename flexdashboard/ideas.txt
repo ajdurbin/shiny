@@ -1,0 +1,5 @@
+4 by 4 page of regression lines?
+time series using some api to get data
+em algorithm, metropolis hastings algorithm, gibbs sampler, whatever else is on dr kims table from class
+visualization of lasso, loess, robust regression lines
+clustering

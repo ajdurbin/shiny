@@ -1,0 +1,136 @@
+---
+title: "Alexander Durbin"
+output: 
+  flexdashboard::flex_dashboard:
+    theme: lumen
+    social: ["menu"]
+    source_code: embed
+runtime: shiny
+---
+
+About {.sidebar}
+=====================================  
+
+I am a second-year graduate student in the Department of Statistics at Virginia Tech. I graduated from Michigan State University in May, 2016 with a B.S. in mathematics. 
+
+<i class="fa fa-external-link"></i> https://www.myhomepage.com
+
+<i class="fa fa-envelope"></i> me@myemail.com
+
+Home {data-icon="fa-home"}
+=====================================  
+    
+Column {data-width=600}
+-------------------------------------
+    
+### Chart 1
+    
+```{r}
+shinyAppDir(
+  system.file("examples/11_timer", package="shiny"),
+  options = list(height=850)
+)
+```
+
+Column {data-width=400}
+-------------------------------------
+   
+### Chart 2
+
+```{r}
+shinyAppDir(
+  system.file("examples/02_text", package="shiny"),
+  options = list(height=850)
+)
+```   
+ 
+### Chart 3
+    
+```{r}
+shinyAppDir(
+  system.file("examples/03_reactivity", package="shiny"),
+  options = list(height=850)
+)
+```
+
+CV {data-orientation=rows, data-icon="fa-file"}
+=====================================     
+   
+Row {data-height=600}
+-------------------------------------
+
+### Chart 1
+
+```{r}
+shinyAppDir(
+  system.file("examples/07_widgets", package="shiny"),
+  options = list(height=850)
+)
+```
+
+Row {data-height=400}
+-------------------------------------
+   
+### Chart 2
+
+```{r}
+shinyAppDir(
+  system.file("examples/05_sliders", package="shiny"),
+  options = list(height=850)
+)
+```   
+
+
+### Chart 3
+
+```{r}
+shinyAppDir(
+  system.file("examples/04_mpg", package="shiny"),
+  options = list(height=850)
+)
+```
+    
+
+R Shiny {data-icon="fa-code"}
+=====================================
+
+```{r}
+shinyAppDir(
+  system.file("examples/06_tabsets", package="shiny"),
+  options = list(height=850)
+)
+```
+
+Tabset
+=====================================   
+
+Column {.tabset}
+-------------------------------------
+   
+### Chart 2
+
+```{r}
+shinyAppDir(
+  system.file("examples/09_upload", package="shiny"),
+  options = list(height=850)
+)
+```   
+ 
+### Chart 3
+    
+```{r}
+shinyAppDir(
+  system.file("examples/10_download", package="shiny"),
+  options = list(height=850)
+)
+```
+
+
+More Shiny
+===================================== 
+```{r}
+shinyAppDir(
+  system.file("examples/01_hello", package="shiny"),
+  options = list(height=850)
+)
+```

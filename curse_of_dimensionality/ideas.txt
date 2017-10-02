@@ -1,0 +1,1 @@
+add distance to 1-nn versus dimension to shiny plot on page 25 in esl

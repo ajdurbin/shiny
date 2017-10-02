@@ -1,0 +1,16 @@
+gibbs sampler
+metropolis hastings
+em algorithm
+kmeans
+newton-raphson
+gauss-newton
+bayesian mcmc in general
+chapter 2 plots from esl
+knn
+glm
+sampling stuff? 
+CART other tree stuff
+box mueller
+accept-reject
+casella-berger chapter 5 examples in sample generating
+parametric bootstrap and nonparametric bootstrap delta method example
