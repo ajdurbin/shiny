@@ -14,3 +14,6 @@ box mueller
 accept-reject
 casella-berger chapter 5 examples in sample generating
 parametric bootstrap and nonparametric bootstrap delta method example
+mixture model
+choose distribution and take xbar and make histograms
+scotland mixture distribution from class
