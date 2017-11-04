@@ -15,9 +15,25 @@ ui <- fluidPage(
                   label = "Choose a distribution:",
                   choices = c("uniform",
                               "normal",
-                              "lognormal",
-                              "exponential",
-                              "cauchy")),                           
+                              "gamma",
+                              "t")),
+      
+      conditionalPanel(condition = "input.dataset == 'uniform'",
+                       numericInput("uniform.min", "Min:", value = 0),
+                       numericInput("uniform.max", "Max:", value = 1)),
+      
+      conditionalPanel(condition = "input.dataset == 'normal'",
+                       numericInput("normal.mean", "Mu:", value = 0),
+                       numericInput("normal.sd", "Sigma:", value = 1)),
+      
+      conditionalPanel(condition = "input.dataset == 'gamma'",
+                       numericInput("gamma.shape", "Shape:", value = 1, min = 0.001),
+                       numericInput("gamma.rate", "Rate:", value = 1, min = 0.001)),
+      
+      conditionalPanel(condition = "input.dataset == 't'",
+                       numericInput("t.loc", "Location:", value = 0),
+                       numericInput("t.scale", "Scale:", value = 1),
+                       numericInput("t.df", "df:", value = 1, min = 1)),
       
       sliderInput(inputId = "sample_size",
                   label = "Number of samples:",
@@ -43,15 +59,16 @@ server <- function(input, output){
   
   the_data <- reactive({
     
+    rt_ls <- function(n, df, mu, a) rt(n, df) * a + mu
+    
     df <- data.frame(
-      uniform = runif(input$sample_size),
-      normal = rnorm(input$sample_size),
-      lognormal = rlnorm(input$sample_size),
-      exponential = rexp(input$sample_size),
-      cauchy = rcauchy(input$sample_size))
-      
+      uniform = runif(input$sample_size, input$uniform.min, input$uniform.max),
+      normal = rnorm(input$sample_size, input$normal.mean, input$normal.sd),
+      gamma = rgamma(input$sample_size, input$gamma.shape, input$gamma.rate),
+      t = rt_ls(input$sample_size, input$t.df, input$t.loc, input$t.scale))
+    
     return(df)
-      
+    
   })
   
   boot <- reactive({
