@@ -1,0 +1,10 @@
+name: flexdashboard
+title:
+username:
+account: ajdurbin
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 230113
+bundleId: 1049793
+url: https://ajdurbin.shinyapps.io/flexdashboard/
+when: 1509212763.09172

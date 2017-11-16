@@ -1,0 +1,10 @@
+name: bootstrap
+title:
+username:
+account: ajdurbin
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 231879
+bundleId: 1058914
+url: https://ajdurbin.shinyapps.io/bootstrap/
+when: 1509803183.17049
