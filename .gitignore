@@ -1,0 +1,8 @@
+*.Rhistory
+*.csv
+*.dat
+*.RData
+*.html
+*.pdf
+*.dcf
+*.DS_Store
